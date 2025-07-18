@@ -17,7 +17,7 @@ function App() {
     queryKey: ["randomGifs", offset],
     queryFn: () =>
       fetch(
-        `https://api.giphy.com/v1/gifs/trending?api_key=gLaeuEkvvl9Ddnfywcx1gGjqXuMrQwG7&limit=12&offset=${offset}&rating=g&bundle=messaging_non_clips`
+        `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&limit=12&offset=${offset}&rating=g&bundle=messaging_non_clips`
       ).then((res) => res.json()),
     refetchOnWindowFocus: false,
     refetchOnMount: false,

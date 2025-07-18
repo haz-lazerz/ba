@@ -32,8 +32,8 @@ function App() {
     (e) => {
       if (
         e.code === "Space" &&
-        lockedItems.length !== 12
-        // data?.meta?.status === 200
+        lockedItems.length !== 12 &&
+        data?.meta?.status === 200
       ) {
         e.preventDefault();
         setOffset((current) => current + 12);
@@ -56,7 +56,7 @@ function App() {
   return (
     <div>
       <h1 className="text-5xl text-white text-center p-3">Giphy</h1>
-      <header className="p-3 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-cols-5 gap-3 place-items-center">
+      <header className="p-3 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 place-items-center">
         <Grid loading={isPending} data={reformatData({ data: data?.data })} />
       </header>
       <div className="flex justify-center">

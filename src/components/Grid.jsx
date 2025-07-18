@@ -5,7 +5,6 @@ import Card from "./Card";
 export default function Grid({ loading, data }) {
   const { lockedItems } = useSelector((state) => state.main);
   if (!data) {
-    console.log("here?");
     const placeholder = Array(12).fill({});
     lockedItems.forEach(({ gridIndex, id, src }) =>
       placeholder.splice(gridIndex, 1, {

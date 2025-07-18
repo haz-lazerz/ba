@@ -11,6 +11,7 @@ export const mainSlice = createSlice({
     addLockedItem: (state, { payload }) => {
       const currentGridState = localStorage.getItem("gridState");
       if (!currentGridState) {
+        state.lockedItems = [...state.lockedItems, payload];
         localStorage.setItem("gridState", JSON.stringify([{ ...payload }]));
         return;
       }

@@ -18,7 +18,12 @@ const Card = ({ src, locked, gridIndex, id, loading }) => {
         ) : (
           <FaLock className="text-white absolute text-2xl m-2 right-0 group-hover:text-red-600" />
         )}
-        <img className="object-cover w-full h-full block" src={src} alt="" />
+        <img
+          loading="lazy"
+          className="object-cover w-full h-full block"
+          src={src}
+          alt=""
+        />
       </>
     );
   };
